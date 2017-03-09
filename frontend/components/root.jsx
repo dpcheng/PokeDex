@@ -10,7 +10,7 @@ const Root = ({store}) => (
     <Router history={hashHistory}>
       <Route path="/" component={ PokemonIndexContainer }>
         <Route path="pokemon/:pokemonId" component={ PokemonDetailContainer }>
-          <Route path="item/:itemId" component={ ItemDetailContainer }/>
+          <Route path="items/:itemId" component={ ItemDetailContainer }/>
         </Route>
       </Route>
     </Router>

@@ -2,7 +2,7 @@ import React from 'react';
 
 const ItemDetail = ({item}) => {
   return (
-    <div>{item.name}{item.image_url}</div>
+    <div>{item.name}</div>
   );
 };
 
