@@ -20,5 +20,5 @@ export const requestAllPokemon = () => dispatch => (
 
 export const requestSinglePokemon = (pokemon) => dispatch => (
   APIUtil.fetchSinglePokemon(pokemon)
-    .then(poke => dispatch(receiveAllPokemon(poke)))
+    .then(poke => dispatch(receiveSinglePokemon(poke)))
 );
