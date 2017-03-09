@@ -16,6 +16,7 @@ class PokemonIndex extends React.Component {
     return (
       <ul>
          {pokemonItems}
+         {this.props.children}
       </ul>
     );
   }
