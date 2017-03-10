@@ -1,3 +1,77 @@
 // Place all the styles related to the Api::Pokemon controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.index-bar {
+  border-top: 1px solid gray;
+  overflow: scroll;
+  height: 100%;
+  white-space: nowrap;
+  position: fixed;
+  display: flex;
+  justify-content: flex-start;
+
+}
+
+main {
+  display: flex;
+  justify-content: space-between;
+  flex-flow: column wrap;
+}
+
+.index-item {
+  text-decoration: none;
+  padding: 5px;
+  text-align: left;
+  margin-left: 0;
+}
+
+.detail {
+  display: flex;
+  justify-content: center;
+  flex-flow: column wrap;
+}
+
+.new-form {
+  display: flex;
+  justify-content: center;
+  margin: 10px
+}
+
+img {
+  align-items: center;
+  padding: 5px;
+  justify-content: center;
+}
+
+.index-item li {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border-bottom: 1px solid gray;
+}
+
+.detail > li {
+  display: flex;
+  justify-content: center;
+}
+
+.detail > ul {
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.detail > div {
+  display: flex;
+  justify-content: center;
+}
+
+.index-item:hover {
+  background-color: gray;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}

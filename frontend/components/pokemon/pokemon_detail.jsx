@@ -34,16 +34,16 @@ class PokemonDetail extends React.Component {
   render() {
     const pokemon = this.props.pokemon;
     return (
-      <ul>
+      <ul className="detail">
         <img src={pokemon.image_url} />
         <li>{pokemon.name}</li>
-        <li>{pokemon.attack}</li>
-        <li>{pokemon.defense}</li>
-        <li>{pokemon.moves}</li>
+        <li>Attack: {pokemon.attack}</li>
+        <li>Defense: {pokemon.defense}</li>
+        <li>Moves: {pokemon.moves}</li>
         <ul>
           {this.renderEachItem.bind(this)()}
-          {this.props.children}
         </ul>
+        {this.props.children}
 
       </ul>
     );

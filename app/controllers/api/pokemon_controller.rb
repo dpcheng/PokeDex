@@ -16,7 +16,7 @@ class Api::PokemonController < ApplicationController
       render :show
     else
       @errors = @pokemon.errors.full_messages
-      render :errors, status: 418
+      render json: @errors, status: 418
     end
   end
 
