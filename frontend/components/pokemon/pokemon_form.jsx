@@ -33,6 +33,7 @@ class PokemonForm extends React.Component {
     };
     this.update = this.update.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.renderErrors = this.renderErrors.bind(this);
   }
 
   update(property) {
@@ -48,29 +49,48 @@ class PokemonForm extends React.Component {
     });
   }
 
+  renderErrors() {
+    if (this.props.errors === undefined) {
+      return (
+        <div></div>
+      );
+    } else {
+      return (
+        <li>{this.props.errors}</li>
+      );
+    }
+  }
+
   render() {
     return (
-      <form>
-        Name
-        <input type="text" onChange={this.update("name")} value={this.state.name} /><br/>
+      <div>
+        <ul>
+          {this.renderErrors()}
+        </ul>
 
-        Attack
-        <input type="text" onChange={this.update("attack")} value={this.state.attack} /><br/>
+        <form>
+          Name
+          <input type="text" onChange={this.update("name")} value={this.state.name} /><br/>
 
-        Defense
-        <input type="text" onChange={this.update("defense")} value={this.state.defense}/><br/>
+          Attack
+          <input type="text" onChange={this.update("attack")} value={this.state.attack} /><br/>
 
-        Poke-Type
-        <select onChange={this.update("poke_type")}>
-          {TYPES.map((type, idx) => <option key={idx} value={type}>{type}</option>)}
-        </select><br/>
+          Defense
+          <input type="text" onChange={this.update("defense")} value={this.state.defense}/><br/>
 
-        Image
-        <input type="text" onChange={this.update("image_url")} value={this.state.image_url} /><br/>
+          Poke-Type
+          <select onChange={this.update("poke_type")}>
+            <option key="default" selected disabled>Select a Type</option>
+            {TYPES.map((type, idx) => <option key={idx} value={type}>{type}</option>)}
+          </select><br/>
 
-        <button onClick={this.handleSubmit}>Submit New Pokemon</button>
+          Image
+          <input type="text" onChange={this.update("image_url")} value={this.state.image_url} /><br/>
 
-      </form>
+          <button onClick={this.handleSubmit}>Submit New Pokemon</button>
+
+        </form>
+      </div>
     );
   }
 }

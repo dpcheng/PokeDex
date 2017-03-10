@@ -5,5 +5,5 @@ export const selectAllPokemon = state => (
 );
 
 export const selectPokemonItem = (state, itemId) => {
-  return state.singlePokemon.items[itemId];
+  return state.pokemonDetail.items[itemId];
 };

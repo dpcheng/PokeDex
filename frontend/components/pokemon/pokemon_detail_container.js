@@ -1,13 +1,13 @@
-import { requestSinglePokemon } from '../../actions/pokemon_actions';
+import { requestpokemonDetail } from '../../actions/pokemon_actions';
 import { connect } from 'react-redux';
 import PokemonDetail from './pokemon_detail';
 
 const mapStateToProps = state => ({
-  pokemon: state.singlePokemon
+  pokemon: state.pokemonDetail
 });
 
 const mapDispatchToProps = dispatch => ({
-  requestSinglePokemon: pokemonId => dispatch(requestSinglePokemon(pokemonId))
+  requestpokemonDetail: pokemonId => dispatch(requestpokemonDetail(pokemonId))
 });
 
 const PokemonDetailContainer = connect(mapStateToProps, mapDispatchToProps)(PokemonDetail);

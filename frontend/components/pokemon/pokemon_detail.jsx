@@ -7,12 +7,12 @@ class PokemonDetail extends React.Component {
   }
 
   componentDidMount() {
-    this.props.requestSinglePokemon(this.props.params.pokemonId);
+    this.props.requestpokemonDetail(this.props.params.pokemonId);
   }
 
   componentWillReceiveProps(newProps) {
     if (this.props.params.pokemonId !== newProps.params.pokemonId) {
-      this.props.requestSinglePokemon(newProps.params.pokemonId);
+      this.props.requestpokemonDetail(newProps.params.pokemonId);
     }
   }
 
@@ -22,11 +22,11 @@ class PokemonDetail extends React.Component {
     }
     return (
       this.props.pokemon.items.map((itemObject, idx) => (
-        <li>
         <Link key={idx} to={`pokemon/${this.props.pokemon.id}/items/${idx}`}>
-          <img width="100" height="100" src={itemObject.image_url} />
+          <li>
+            <img width="100" height="100" src={itemObject.image_url} />
+          </li>
         </Link>
-        </li>
       ))
     );
   }
